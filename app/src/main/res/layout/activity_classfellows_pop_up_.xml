@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rounded_edittext_corner"
+    tools:ignore="MissingDefaultResource">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@drawable/rounded_edittext_corner"
+        android:orientation="vertical"
+        android:padding="40dp"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="-37dp">
+
+        <ImageView
+            android:id="@+id/login_dp"
+            android:layout_width="117dp"
+            android:layout_height="93dp"
+            android:src="@drawable/profile_screen_ic"
+            tools:layout_editor_absoluteX="152dp"
+            tools:layout_editor_absoluteY="104dp" />
+
+        <TextView
+            android:id="@+id/editText_firstname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="10dp"
+            android:hint="FirstName"
+            android:drawablePadding="8dp"
+            android:inputType="textPersonName"
+            android:padding="5dip"
+            tools:layout_editor_absoluteX="68dp"
+            tools:layout_editor_absoluteY="109dp" />
+
+        <TextView
+            android:id="@+id/editText_lastname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+
+            android:drawablePadding="8dp"
+            android:ems="10"
+            android:hint="LastName"
+            android:padding="5dip"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="68dp"
+            tools:layout_editor_absoluteY="174dp" />
+
+        <TextView
+            android:id="@+id/editText_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:ems="10"
+            android:padding="5dip"
+            android:layout_marginTop="10dp"
+            android:hint="UserName"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="68dp"
+            tools:layout_editor_absoluteY="239dp" />
+
+        <TextView
+            android:id="@+id/editText_cnic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="8dp"
+            android:ems="10"
+            android:padding="5dip"
+            android:hint="Cnic *****-*******-*"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="68dp"
+            tools:layout_editor_absoluteY="302dp" />
+
+        <TextView
+            android:id="@+id/editText_phoneNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="10dp"
+            android:hint="PhoneNo"
+            android:drawablePadding="8dp"
+            android:padding="5dip"
+            android:inputType="number"
+            tools:layout_editor_absoluteX="68dp"
+            tools:layout_editor_absoluteY="363dp" />
+
+        <TextView
+            android:id="@+id/editText_email"
+            android:layout_width="match_parent"
+            android:padding="5dip"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="10dp"
+            android:hint="Email"
+            android:drawablePadding="8dp"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="68dp"
+            tools:layout_editor_absoluteY="427dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/button_Email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_rounded_button"
+                android:layout_weight="1"
+                android:text="Email" />
+            <Button
+                android:id="@+id/button_Phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_rounded_button"
+                android:layout_weight="1"
+                android:text="Call" />
+            <Button
+                android:id="@+id/button_Message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_rounded_button"
+                android:layout_weight="1"
+                android:text="Message" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

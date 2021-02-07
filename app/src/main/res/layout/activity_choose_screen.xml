@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_onboarding_screens"
+    tools:context=".Activities.ChooseScreenActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="40dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-16dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="183dp"
+            android:layout_height="121dp"
+            android:layout_marginTop="100dp"
+            app:srcCompat="@drawable/ic_splash_screen"
+            tools:layout_editor_absoluteX="71dp"
+            tools:layout_editor_absoluteY="268dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:text="@string/STUDENT"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="142dp"
+            tools:layout_editor_absoluteY="388dp" />
+
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="185dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/cornar_rounded_button"
+            android:text="LOG IN"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button_signup"
+            android:layout_width="185dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/cornar_rounded_button"
+            android:text="Sign up"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

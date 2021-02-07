@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_onboarding_screens"
+    tools:context=".Activities.Profile_Screen_Activity">
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="302dp"
+        android:layout_height="531dp"
+        android:background="@drawable/rounded_edittext_corner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_Profile"
+        app:layout_constraintVertical_bias="0.421" />
+
+    <TextView
+        android:id="@+id/textView_profile_back"
+        android:layout_width="53dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:drawableLeft="@drawable/ic_profile_back_button"
+        android:drawableTint="@color/white"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_Welcome_to_your"
+        android:layout_width="293dp"
+        android:layout_height="27dp"
+        android:text="Welcome to your,"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_profile_back" />
+
+    <TextView
+        android:id="@+id/textView_Profile"
+        android:layout_width="293dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="4dp"
+        android:text="Profile"
+        android:textColor="#FFFFFF"
+        android:textSize="43dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_Welcome_to_your" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="91dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:srcCompat="@drawable/profile_screen_ic" />
+
+    <TextView
+        android:id="@+id/TextView_firstname"
+        android:layout_width="285dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="49dp"
+        android:drawableLeft="@drawable/ic_icon_material_person"
+        android:drawablePadding="8dp"
+        android:ems="10"
+        android:hint="FirstName"
+        android:inputType="textPersonName"
+        android:padding="5dip"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/TextView_lastname"
+        android:layout_width="285dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/ic_icon_open_person"
+        android:drawablePadding="8dp"
+        android:ems="10"
+        android:hint="LastName"
+        android:inputType="textPersonName"
+        android:padding="5dip"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/TextView_firstname" />
+
+    <TextView
+        android:id="@+id/TextView_username"
+        android:layout_width="285dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/ic_icon_material_account"
+        android:drawablePadding="8dp"
+        android:ems="10"
+        android:hint="UserName"
+        android:inputType="textPersonName"
+        android:padding="5dip"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/TextView_lastname" />
+
+    <TextView
+        android:id="@+id/TextView_cnic"
+        android:layout_width="285dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/ic_icon_awesome_id_cnic"
+        android:drawablePadding="8dp"
+        android:ems="10"
+        android:hint="Cnic *****-*******-*"
+        android:inputType="textPersonName"
+        android:padding="5dip"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/TextView_username" />
+
+    <TextView
+        android:id="@+id/TextView_phoneNo"
+        android:layout_width="285dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/ic_icon_material_smartphone"
+        android:drawablePadding="8dp"
+        android:ems="10"
+        android:hint="PhoneNo"
+        android:inputType="number"
+        android:padding="5dip"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/TextView_cnic" />
+
+    <TextView
+        android:id="@+id/TextView_email"
+        android:layout_width="285dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/ic_icon_zocial_email"
+        android:drawablePadding="8dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:padding="5dip"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/TextView_phoneNo" />
+
+    <Button
+        android:id="@+id/button_Edit_profile"
+        android:layout_width="150dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/cornar_rounded_button"
+        android:text="Edit Profile"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/TextView_email"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
