@@ -9,7 +9,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.databasefirebaseprojectexample.GetterSetterActivitys.AnnouncementsGetterSetter;
-import com.example.databasefirebaseprojectexample.AdapterListsActivitys.AnnouncementsList;
+import com.example.databasefirebaseprojectexample.Adapters.AnnouncementsListActivity;
 import com.example.databasefirebaseprojectexample.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -59,7 +59,7 @@ public class AnnouncementsActivity extends AppCompatActivity implements View.OnC
                         Users.add(User);
                     }
                     //creating Userlist adapter
-                    AnnouncementsList UserAdapter = new AnnouncementsList(AnnouncementsActivity.this, Users);
+                    AnnouncementsListActivity UserAdapter = new AnnouncementsListActivity(AnnouncementsActivity.this, Users);
                     //attaching adapter to the listview
                     listViewUsers.setAdapter(UserAdapter);
                 }
@@ -73,7 +73,7 @@ public class AnnouncementsActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent(AnnouncementsActivity.this, Home_Screen_Activity.class);
+        Intent intent = new Intent(AnnouncementsActivity.this, HomeActivity.class);
         startActivity(intent);
         finish();
     }

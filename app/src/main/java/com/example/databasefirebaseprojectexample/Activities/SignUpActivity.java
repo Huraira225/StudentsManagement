@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +15,6 @@ import android.widget.Toast;
 
 import com.example.databasefirebaseprojectexample.R;
 import com.example.databasefirebaseprojectexample.GetterSetterActivitys.RegisterUsers;
-import com.example.databasefirebaseprojectexample.RegistrationComplete;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -28,7 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class SignUpScreenActivity extends AppCompatActivity implements View.OnClickListener {
+public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
   String FirstName,LastName,UserName,Cnic,PhoneNo,Email,Password,id,Approval;
   EditText etfirstname,etlastname,etuserName,etcnic,etphoneNo,etEmail,etPassword;
   TextView tvlogin;
@@ -68,7 +66,7 @@ public class SignUpScreenActivity extends AppCompatActivity implements View.OnCl
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(SignUpScreenActivity.this, LoginScreenActivity.class));
+                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
             }
         });
 
@@ -150,7 +148,7 @@ public class SignUpScreenActivity extends AppCompatActivity implements View.OnCl
                     Bundle bundle= new Bundle();
                     bundle.putString("signup","Student signup");
                     firebaseAnalytics.logEvent("signup",bundle);
-                    Toast.makeText(SignUpScreenActivity.this, "Sending your registeration form to Admin Please wait....", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SignUpActivity.this, "Sending your registeration form to Admin Please wait....", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
                     new Timer().schedule(new TimerTask() {
                         @Override
@@ -182,6 +180,6 @@ public class SignUpScreenActivity extends AppCompatActivity implements View.OnCl
         Approval="no";
         RegisterUsers registerUser=new RegisterUsers(FirstName,LastName,UserName,Cnic,PhoneNo,Email,id,Approval);
         databaseReference.child(id).setValue(registerUser);
-        startActivity(new Intent(SignUpScreenActivity.this, RegistrationComplete.class));
+        startActivity(new Intent(SignUpActivity.this, RegistrationCompleteActivity.class));
     }
 }

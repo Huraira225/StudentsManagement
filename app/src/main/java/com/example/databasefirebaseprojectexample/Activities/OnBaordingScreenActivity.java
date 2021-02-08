@@ -1,4 +1,4 @@
-package com.example.databasefirebaseprojectexample;
+package com.example.databasefirebaseprojectexample.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -14,13 +14,14 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.databasefirebaseprojectexample.Activities.ChooseScreenActivity;
+import com.example.databasefirebaseprojectexample.R;
+import com.example.databasefirebaseprojectexample.GetterSetterActivitys.ScreenItems;
+import com.example.databasefirebaseprojectexample.Adapters.SliderAdapter;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-public class BaordingScreenActivity extends AppCompatActivity {
+public class OnBaordingScreenActivity extends AppCompatActivity {
 
     ViewPager viewPager;
     LinearLayout DotsLayout;
@@ -37,7 +38,7 @@ public class BaordingScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_baording_screen);
+        setContentView(R.layout.activity_onbaording_screen);
 
         mBackBtn =findViewById(R.id.PrevBtn);
         mNextBtn =findViewById(R.id.nextBtn);

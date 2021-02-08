@@ -1,4 +1,4 @@
-package com.example.databasefirebaseprojectexample;
+package com.example.databasefirebaseprojectexample.GetterSetterActivitys;
 
 public class ScreenItems {
 

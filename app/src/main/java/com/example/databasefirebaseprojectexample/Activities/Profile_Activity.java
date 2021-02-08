@@ -5,11 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.databasefirebaseprojectexample.R;
-import com.example.databasefirebaseprojectexample.GetterSetterActivitys.RegisterUsers;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -28,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import static android.media.CamcorderProfile.get;
 
-public class Profile_Screen_Activity extends AppCompatActivity implements View.OnClickListener {
+public class Profile_Activity extends AppCompatActivity implements View.OnClickListener {
 
     TextView firstName, lastName, userName, cnic, phoneNo,email,back ;
     Button button;
@@ -102,8 +99,8 @@ public class Profile_Screen_Activity extends AppCompatActivity implements View.O
             finish();
 
         }else if (id == R.id.button_Edit_profile) {
-            final AlertDialog.Builder mBuilder = new AlertDialog.Builder(Profile_Screen_Activity.this);
-            View mView = getLayoutInflater().inflate(R.layout.activity_edite_profile_pop_up_, null);
+            final AlertDialog.Builder mBuilder = new AlertDialog.Builder(Profile_Activity.this);
+            View mView = getLayoutInflater().inflate(R.layout.activity_profile_pop_up_dailog, null);
             mBuilder.setView(mView);
              final AlertDialog dialog = mBuilder.create();
             dialog.show();
@@ -146,7 +143,7 @@ public class Profile_Screen_Activity extends AppCompatActivity implements View.O
                     profileUserRef.child("email").setValue(Email);
 
 
-                                            Toast.makeText(Profile_Screen_Activity.this, "User Updated", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(Profile_Activity.this, "User Updated", Toast.LENGTH_LONG).show();
                                             Bundle bundle= new Bundle();
                                             bundle.putString("profile","Student profile");
                                             firebaseAnalytics.logEvent("profile",bundle);

@@ -1,6 +1,5 @@
 package com.example.databasefirebaseprojectexample.Activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -12,24 +11,16 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Toast;
 
-import com.example.databasefirebaseprojectexample.BaordingScreenActivity;
 import com.example.databasefirebaseprojectexample.R;
-import com.example.databasefirebaseprojectexample.RegistrationComplete;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-public class SplashScreenActivity extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity {
 
 
     String Firstname,Lastname;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_screen);
+        setContentView(R.layout.activity_splashscreen);
 
 
 
@@ -51,26 +42,26 @@ public class SplashScreenActivity extends AppCompatActivity {
                 if (netInfo != null) {
                     if (netInfo.isConnected()) {
                         if (check == false) {
-                            startActivity(new Intent(SplashScreenActivity.this, BaordingScreenActivity.class));
+                            startActivity(new Intent(SplashActivity.this, OnBaordingScreenActivity.class));
                             finish();
                         } else if (check == true) {
                             if (checkLoginState.equals("UserLogin")) {
                                 // Internet Available
-                                Intent intent = new Intent(SplashScreenActivity.this, Home_Screen_Activity.class);
+                                Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
                                 intent.putExtra("firstname", Firstname);
                                 intent.putExtra("lastname", Lastname);
                                 startActivity(intent);
                                 finish();
                             }
                         } else if (checkLoginState.equals("UserLogout")) {
-                            startActivity(new Intent(SplashScreenActivity.this, ChooseScreenActivity.class));
+                            startActivity(new Intent(SplashActivity.this, ChooseScreenActivity.class));
                             finish();
                         }
                     }else {
-                        Toast.makeText(SplashScreenActivity.this, "Please Connect to Internet", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SplashActivity.this, "Please Connect to Internet", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                        Toast.makeText(SplashScreenActivity.this, "Please Connect to Internet", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SplashActivity.this, "Please Connect to Internet", Toast.LENGTH_SHORT).show();
                 }
 
 

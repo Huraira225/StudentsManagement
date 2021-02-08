@@ -9,27 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegistrationComplete">
+        <activity android:name=".Activities.RegistrationCompleteActivity">
 
 
         </activity>
-        <activity android:name=".BaordingScreenActivity"></activity>
+        <activity android:name=".Activities.OnBaordingScreenActivity"></activity>
         <activity android:name=".Activities.AnnouncementsActivity" />
-        <activity android:name=".Activities.Home_Screen_Activity" />
+        <activity android:name=".Activities.HomeActivity" />
         <activity android:name=".Activities.ClassFellowsActivity" />
-        <activity android:name=".DialogsActivities.ProfilePopUpDialog" />
+        <activity android:name=".Dialogs.ProfileDialogActivity" />
         <activity android:name=".Activities.ForgetPasswordActivity" />
-        <activity android:name=".Activities.Profile_Screen_Activity" />
-        <activity android:name=".Activities.LoginScreenActivity" />
+        <activity android:name=".Activities.Profile_Activity" />
+        <activity android:name=".Activities.LoginActivity" />
         <activity android:name=".Activities.ChooseScreenActivity" />
-        <activity android:name=".Activities.SplashScreenActivity">
+        <activity android:name=".Activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.SignUpScreenActivity" />
+        <activity android:name=".Activities.SignUpActivity" />
     </application>
 
 </manifest>

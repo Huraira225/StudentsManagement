@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,14 +22,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class LoginScreenActivity extends AppCompatActivity  {
+public class LoginActivity extends AppCompatActivity  {
      String Email,Password,Approve;
      EditText etEmail, etPassword;
      FirebaseAuth auth;
@@ -44,7 +42,7 @@ public class LoginScreenActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_);
+        setContentView(R.layout.activity_login);
 
 
         etEmail = (EditText) findViewById(R.id.editText_email);
@@ -66,14 +64,14 @@ public class LoginScreenActivity extends AppCompatActivity  {
         btnSignup.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-               startActivity(new Intent(LoginScreenActivity.this, SignUpScreenActivity.class));
+               startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
             }
         });
 
         btnReset.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginScreenActivity.this, ForgetPasswordActivity.class));
+                startActivity(new Intent(LoginActivity.this, ForgetPasswordActivity.class));
             }
         });
 
@@ -111,7 +109,7 @@ public class LoginScreenActivity extends AppCompatActivity  {
                 progressBar.setVisibility(View.VISIBLE);
                 //authenticate user
                     auth.signInWithEmailAndPassword(Email, Password)
-                            .addOnCompleteListener(LoginScreenActivity.this, new OnCompleteListener<AuthResult>() {
+                            .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     // If sign in fails, display a message to the user. If sign in succeeds
@@ -120,7 +118,7 @@ public class LoginScreenActivity extends AppCompatActivity  {
 
                                     if (!task.isSuccessful()) {
                                         progressBar.setVisibility(View.GONE);
-                                        Toast.makeText(LoginScreenActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                        Toast.makeText(LoginActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
                                     } else {
 
                                         String uid= FirebaseAuth.getInstance().getUid();
@@ -156,14 +154,14 @@ public class LoginScreenActivity extends AppCompatActivity  {
                                                     editor.putString("isUserLogin", "UserLogin");
                                                     editor.commit();
 
-                                                    Toast.makeText(LoginScreenActivity.this, "User login in this Activity", Toast.LENGTH_LONG).show();
-                                                    Intent intent = new Intent(LoginScreenActivity.this, Home_Screen_Activity.class);
+                                                    Toast.makeText(LoginActivity.this, "User login in this Activity", Toast.LENGTH_LONG).show();
+                                                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                                     startActivity(intent);
                                                     finish();
 
                                                 }
                                                 else{
-                                                    Toast.makeText(LoginScreenActivity.this, "Please Approve Your Account From Admin", Toast.LENGTH_LONG).show();
+                                                    Toast.makeText(LoginActivity.this, "Please Approve Your Account From Admin", Toast.LENGTH_LONG).show();
 
                                                 }
 

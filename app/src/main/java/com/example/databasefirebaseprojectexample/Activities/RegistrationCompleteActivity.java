@@ -1,4 +1,4 @@
-package com.example.databasefirebaseprojectexample;
+package com.example.databasefirebaseprojectexample.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,10 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.databasefirebaseprojectexample.Activities.Home_Screen_Activity;
-import com.example.databasefirebaseprojectexample.Activities.LoginScreenActivity;
+import com.example.databasefirebaseprojectexample.R;
 
-public class RegistrationComplete extends AppCompatActivity implements View.OnClickListener {
+public class RegistrationCompleteActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +23,7 @@ public class RegistrationComplete extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent(RegistrationComplete.this, LoginScreenActivity.class);
+        Intent intent = new Intent(RegistrationCompleteActivity.this, LoginActivity.class);
         startActivity(intent);
         finish();
     }

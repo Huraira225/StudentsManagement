@@ -15,7 +15,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.databasefirebaseprojectexample.R;
 import com.google.android.material.navigation.NavigationView;
@@ -27,7 +26,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class Home_Screen_Activity extends AppCompatActivity implements View.OnClickListener {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView firstName,email;
     FirebaseUser currentUser;
@@ -42,7 +41,7 @@ public class Home_Screen_Activity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_screen);
+        setContentView(R.layout.activity_home);
 
 
         auth= FirebaseAuth.getInstance();
@@ -58,7 +57,7 @@ public class Home_Screen_Activity extends AppCompatActivity implements View.OnCl
             String uid=currentUser.getUid();
             profileUserRef = FirebaseDatabase.getInstance().getReference().child("Students").child(uid);            //User is Logged in
         }else{
-            startActivity(new Intent(Home_Screen_Activity.this,LoginScreenActivity.class));
+            startActivity(new Intent(HomeActivity.this, LoginActivity.class));
             finish();
         }
 
@@ -91,15 +90,15 @@ public class Home_Screen_Activity extends AppCompatActivity implements View.OnCl
             {
                 switch (menuItem.getItemId()){
                     case R.id.home_scr:
-                        startActivity(new Intent(Home_Screen_Activity.this, AnnouncementsActivity.class));
+                        startActivity(new Intent(HomeActivity.this, AnnouncementsActivity.class));
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.porfile_scr:
-                        startActivity(new Intent(Home_Screen_Activity.this, Profile_Screen_Activity.class));
+                        startActivity(new Intent(HomeActivity.this, Profile_Activity.class));
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.classfellow_scr:
-                        startActivity(new Intent(Home_Screen_Activity.this, ClassFellowsActivity.class));
+                        startActivity(new Intent(HomeActivity.this, ClassFellowsActivity.class));
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.logout_scr:
@@ -109,7 +108,7 @@ public class Home_Screen_Activity extends AppCompatActivity implements View.OnCl
                         editor.commit();
 
                         auth.getInstance().signOut();
-                        Intent intent = new Intent(Home_Screen_Activity.this,ChooseScreenActivity.class);
+                        Intent intent = new Intent(HomeActivity.this,ChooseScreenActivity.class);
                         startActivity(intent);
                         break;
                 }
@@ -121,10 +120,10 @@ public class Home_Screen_Activity extends AppCompatActivity implements View.OnCl
     public void onClick(View view) {
         int id = view.getId();
         if(id == R.id.button_profile){
-            startActivity(new Intent(Home_Screen_Activity.this, Profile_Screen_Activity.class));
+            startActivity(new Intent(HomeActivity.this, Profile_Activity.class));
         }
         else if (id == R.id.button_classfellow){
-            startActivity(new Intent(Home_Screen_Activity.this, ClassFellowsActivity.class));
+            startActivity(new Intent(HomeActivity.this, ClassFellowsActivity.class));
         }
     }
 

@@ -40,7 +40,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ForgetPasswordActivity.this, LoginScreenActivity.class));
+                startActivity(new Intent(ForgetPasswordActivity.this, LoginActivity.class));
                 finish();
             }
         });

@@ -1,15 +1,17 @@
-package com.example.databasefirebaseprojectexample;
+package com.example.databasefirebaseprojectexample.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
+
+import com.example.databasefirebaseprojectexample.GetterSetterActivitys.ScreenItems;
+import com.example.databasefirebaseprojectexample.R;
 
 import java.util.List;
 
@@ -28,7 +30,7 @@ LayoutInflater layoutInflater;
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(R.layout.slide_layout, container, false);
+        View view = layoutInflater.inflate(R.layout.activity_oboarding_slider_layout, container, false);
 
         ImageView slide_imageView = view.findViewById(R.id.Slide_image);
         TextView Slide_headings = view.findViewById(R.id.slide_headings);

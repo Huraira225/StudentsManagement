@@ -1,4 +1,4 @@
-package com.example.databasefirebaseprojectexample.AdapterListsActivitys;
+package com.example.databasefirebaseprojectexample.Adapters;
 
 
 import android.app.Activity;
@@ -15,14 +15,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-public class AnnouncementsList extends ArrayAdapter<AnnouncementsGetterSetter> {
+public class AnnouncementsListActivity extends ArrayAdapter<AnnouncementsGetterSetter> {
 
     private Activity context;
     //list of users
     List<AnnouncementsGetterSetter> Users;
 
-    public AnnouncementsList(Activity context, List<AnnouncementsGetterSetter> Users) {
-        super(context, R.layout.layout_announcements_list_items, Users);
+    public AnnouncementsListActivity(Activity context, List<AnnouncementsGetterSetter> Users) {
+        super(context, R.layout.activity_announcements_list_items, Users);
         this.context = context;
         this.Users = Users;
     }
@@ -31,7 +31,7 @@ public class AnnouncementsList extends ArrayAdapter<AnnouncementsGetterSetter> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
-        View listViewItem = inflater.inflate(R.layout.layout_announcements_list_items, null, true);
+        View listViewItem = inflater.inflate(R.layout.activity_announcements_list_items, null, true);
         //initialize
         TextView textViewName = (TextView) listViewItem.findViewById(R.id.textView_title);
         TextView textviewemail = (TextView) listViewItem.findViewById(R.id.textview_accouncements);
