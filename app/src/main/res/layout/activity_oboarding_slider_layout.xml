@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="130dp"
-        app:srcCompat="@drawable/first_baording_screen" />
+        app:srcCompat="@drawable/ic_first_baording_screen" />
 
     <TextView
         android:id="@+id/slide_headings"

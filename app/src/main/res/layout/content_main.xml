@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_onboarding_screens"
-    tools:context=".Activities.HomeActivity">
+    tools:context=".activities.HomeActivity">
 
 
 
@@ -72,7 +72,7 @@ MANAGEMENT"
         android:layout_marginStart="43dp"
         android:layout_marginTop="39dp"
         android:layout_marginEnd="37dp"
-        android:background="@drawable/cornar_rounded_button"
+        android:background="@drawable/bg_cornar_rounded_button"
         android:drawableTop="@drawable/ic_icon_ionic_md_person"
         android:padding="10dp"
         android:text="My Profile"
@@ -90,7 +90,7 @@ MANAGEMENT"
         android:layout_marginStart="40dp"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="40dp"
-        android:background="@drawable/cornar_rounded_button"
+        android:background="@drawable/bg_cornar_rounded_button"
         android:drawableTop="@drawable/ic_icon_material_class"
         android:padding="10dp"
         android:text="Classfellow"

@@ -1,4 +1,4 @@
-package com.example.databasefirebaseprojectexample.Adapters;
+package com.example.databasefirebaseprojectexample.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,21 +10,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
-import com.example.databasefirebaseprojectexample.GetterSetterActivitys.ScreenItems;
+import com.example.databasefirebaseprojectexample.classes.ScreenItems;
 import com.example.databasefirebaseprojectexample.R;
 
 import java.util.List;
 
-public class SliderAdapter extends PagerAdapter {
+public class OnboardingSliderAdapter extends PagerAdapter {
 LayoutInflater layoutInflater;
     Context context ;
     List<ScreenItems> mListScreen;
 
-    public SliderAdapter(Context mContext, List<ScreenItems> mListScreen) {
+    public OnboardingSliderAdapter(Context mContext, List<ScreenItems> mListScreen) {
         this.context = mContext;
         this.mListScreen = mListScreen;
     }
-
 
     @NonNull
     @Override

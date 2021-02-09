@@ -1,4 +1,4 @@
-package com.example.databasefirebaseprojectexample.Activities;
+package com.example.databasefirebaseprojectexample.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,10 +17,8 @@ public class RegistrationCompleteActivity extends AppCompatActivity implements V
         setContentView(R.layout.activity_registration_complete);
 
         Button button= findViewById(R.id.button_LogIn);
-
          button.setOnClickListener(this);
     }
-
     @Override
     public void onClick(View view) {
         Intent intent = new Intent(RegistrationCompleteActivity.this, LoginActivity.class);

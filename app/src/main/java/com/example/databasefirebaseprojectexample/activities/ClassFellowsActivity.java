@@ -1,4 +1,4 @@
-package com.example.databasefirebaseprojectexample.Activities;
+package com.example.databasefirebaseprojectexample.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,9 +16,9 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.databasefirebaseprojectexample.Adapters.ItemsListActivity;
+import com.example.databasefirebaseprojectexample.adapters.ClassfellowItemsListActivity;
 import com.example.databasefirebaseprojectexample.R;
-import com.example.databasefirebaseprojectexample.GetterSetterActivitys.RegisterUsers;
+import com.example.databasefirebaseprojectexample.classes.RegisterUsers;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -45,6 +45,7 @@ public class ClassFellowsActivity extends AppCompatActivity implements View.OnCl
 
         firebaseAnalytics= FirebaseAnalytics.getInstance(this);
         databaseReference= FirebaseDatabase.getInstance().getReference("Students");
+
         listView=findViewById(R.id.listViewUsers);
         progressBar = (ProgressBar) findViewById(R.id.progressBar_classfellow);
 
@@ -52,37 +53,6 @@ public class ClassFellowsActivity extends AppCompatActivity implements View.OnCl
         textView.setOnClickListener(this);
 
         Users = new ArrayList<>();
-
-        progressBar.setVisibility(View.VISIBLE);
-            databaseReference.orderByChild("approve").equalTo("yes").addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-
-                    //clearing the previous User list
-                    Users.clear();
-
-                    //getting all nodes
-                    for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                        //getting User from firebase console
-
-                        RegisterUsers User = postSnapshot.getValue(RegisterUsers.class);
-                        //adding User to the list
-                        Users.add(User);
-
-                    }
-
-                    //creating Userlist adapter
-                    ItemsListActivity UserAdapter = new ItemsListActivity(ClassFellowsActivity.this, Users);
-                    //attaching adapter to the listview
-                    listView.setAdapter(UserAdapter);
-                    // progressBar.setVisibility(View.GONE);
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
-            });
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -92,14 +62,40 @@ public class ClassFellowsActivity extends AppCompatActivity implements View.OnCl
             }
         });
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        databaseReference.orderByChild("approve").equalTo("yes").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                //clearing the previous User list
+                Users.clear();
+                //getting all nodes
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    //getting User from firebase console
+                    RegisterUsers User = postSnapshot.getValue(RegisterUsers.class);
+                    //adding User to the list
+                    Users.add(User);
+                }
+                //creating Userlist adapter
+                ClassfellowItemsListActivity UserAdapter = new ClassfellowItemsListActivity(ClassFellowsActivity.this, Users);
+                //attaching adapter to the listview
+                listView.setAdapter(UserAdapter);
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
 
     private void Call(final String firstname, final String lastname, final String username, final String cnic , final String phoneno, final String email, final String approve , final String id) {
-
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         LayoutInflater inflater = getLayoutInflater();
-        final View dialogView = inflater.inflate(R.layout.activity_classfellows_pop_up_dailog, null);
+        final View dialogView = inflater.inflate(R.layout.layout_dialog_classfellows, null);
         dialogBuilder.setView(dialogView);
-        //Access Dialog views
+        //Access Dialog Views
         final TextView updateTextFirstname =  dialogView.findViewById(R.id.editText_firstname);
         final TextView updateTextLastname =  dialogView.findViewById(R.id.editText_lastname);
         final TextView updateTextUsername =  dialogView.findViewById(R.id.editText_username);
@@ -113,8 +109,6 @@ public class ClassFellowsActivity extends AppCompatActivity implements View.OnCl
         updateTextCnic.setText(cnic);
         updateTextPhoneno.setText(phoneno);
         updateTextEmail.setText(email);
-
-
 
         final Button buttonEmail = (Button) dialogView.findViewById(R.id.button_Email);
         final Button buttonPhone = (Button) dialogView.findViewById(R.id.button_Phone);
@@ -167,9 +161,7 @@ public class ClassFellowsActivity extends AppCompatActivity implements View.OnCl
                 b.dismiss();
             }
         });
-
     }
-
     @Override
     public void onClick(View view) {
         finish();

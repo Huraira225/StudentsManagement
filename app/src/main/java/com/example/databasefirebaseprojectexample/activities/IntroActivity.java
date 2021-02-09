@@ -1,4 +1,4 @@
-package com.example.databasefirebaseprojectexample.Activities;
+package com.example.databasefirebaseprojectexample.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,14 +10,13 @@ import android.widget.Button;
 import com.example.databasefirebaseprojectexample.R;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
-public class ChooseScreenActivity extends AppCompatActivity  {
+public class IntroActivity extends AppCompatActivity  {
     FirebaseAnalytics firebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         firebaseAnalytics= FirebaseAnalytics.getInstance(this);
-
         setContentView(R.layout.activity_choose_screen);
 
         Button btn=findViewById(R.id.button_login);
@@ -28,8 +27,7 @@ public class ChooseScreenActivity extends AppCompatActivity  {
 
             @Override
             public void onClick(View v) {
-
-                Intent i=new Intent(ChooseScreenActivity.this, LoginActivity.class);
+                Intent i=new Intent(IntroActivity.this, LoginActivity.class);
                 Bundle bundle= new Bundle();
                 bundle.putString("loginscreen","Student login screen");
                 firebaseAnalytics.logEvent("loginscreen",bundle);
@@ -40,7 +38,7 @@ public class ChooseScreenActivity extends AppCompatActivity  {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent v=new Intent(ChooseScreenActivity.this, SignUpActivity.class);
+                Intent v=new Intent(IntroActivity.this, SignUpActivity.class);
                 Bundle bundle= new Bundle();
                 bundle.putString("signupscreen","Student signup screen");
                 firebaseAnalytics.logEvent("signupscreen",bundle);

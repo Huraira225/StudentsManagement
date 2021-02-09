@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_onboarding_screens"
-    tools:context=".Activities.OnBaordingScreenActivity">
+    tools:context=".activities.OnBoardingScreenActivity">
 
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="match_parent"
         android:layout_height="660dp"
         android:scaleType="fitXY"
-        android:src="@drawable/onboarding_screen_corner_rounded"
+        android:src="@drawable/bg_onboarding_screen_corner_rounded"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +34,7 @@
         android:id="@+id/btn_get_started"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/cornar_rounded_button"
+        android:background="@drawable/bg_cornar_rounded_button"
         android:text="Get Started"
         android:textColor="#fff"
         android:visibility="invisible"

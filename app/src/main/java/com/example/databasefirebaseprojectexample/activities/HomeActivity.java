@@ -1,4 +1,4 @@
-package com.example.databasefirebaseprojectexample.Activities;
+package com.example.databasefirebaseprojectexample.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -43,14 +43,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-
         auth= FirebaseAuth.getInstance();
         currentUser=auth.getCurrentUser();
 
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
@@ -73,16 +70,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         btn2.setOnClickListener(this);
 
         drawer = findViewById(R.id.home_screen);
-
-
-
-        
         toggle =new ActionBarDrawerToggle(this,drawer,toolbar,R.string.open,R.string.close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
-
-
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -94,7 +84,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.porfile_scr:
-                        startActivity(new Intent(HomeActivity.this, Profile_Activity.class));
+                        startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.classfellow_scr:
@@ -108,7 +98,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                         editor.commit();
 
                         auth.getInstance().signOut();
-                        Intent intent = new Intent(HomeActivity.this,ChooseScreenActivity.class);
+                        Intent intent = new Intent(HomeActivity.this, IntroActivity.class);
                         startActivity(intent);
                         break;
                 }
@@ -120,7 +110,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         int id = view.getId();
         if(id == R.id.button_profile){
-            startActivity(new Intent(HomeActivity.this, Profile_Activity.class));
+            startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
         }
         else if (id == R.id.button_classfellow){
             startActivity(new Intent(HomeActivity.this, ClassFellowsActivity.class));
@@ -130,7 +120,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onStart() {
         super.onStart();
-
         profileUserRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -144,7 +133,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     email.setText(currentUser.getEmail());
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 

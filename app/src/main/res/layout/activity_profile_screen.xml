@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_onboarding_screens"
-    tools:context=".Activities.Profile_Activity">
+    tools:context=".activities.ProfileActivity">
 
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="302dp"
         android:layout_height="531dp"
-        android:background="@drawable/rounded_edittext_corner"
+        android:background="@drawable/bg_rounded_corner_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:srcCompat="@drawable/profile_screen_ic" />
+        app:srcCompat="@drawable/ic_profile_screen" />
 
     <TextView
         android:id="@+id/TextView_firstname"
@@ -171,7 +171,7 @@
         android:layout_width="150dp"
         android:layout_height="44dp"
         android:layout_marginTop="52dp"
-        android:background="@drawable/cornar_rounded_button"
+        android:background="@drawable/bg_cornar_rounded_button"
         android:text="Edit Profile"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
@@ -179,6 +179,15 @@
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/TextView_email"
         app:layout_constraintVertical_bias="0.0" />
-
+    <ProgressBar
+        android:id="@+id/progressBar_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:indeterminate="true"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

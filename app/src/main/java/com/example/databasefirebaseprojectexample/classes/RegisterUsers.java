@@ -1,8 +1,7 @@
-package com.example.databasefirebaseprojectexample.GetterSetterActivitys;
+package com.example.databasefirebaseprojectexample.classes;
 
 public class RegisterUsers {
     String firstname,lastname,username,cnic,phoneno,email, id,approve;
-
     public RegisterUsers() {
     }
 
@@ -16,7 +15,6 @@ public class RegisterUsers {
         this.id = id;
         this.approve=approve;
     }
-
     public String getFirstname() {
         return firstname;
     }

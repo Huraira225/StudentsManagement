@@ -1,4 +1,4 @@
-package com.example.databasefirebaseprojectexample.Activities;
+package com.example.databasefirebaseprojectexample.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.databasefirebaseprojectexample.R;
-import com.example.databasefirebaseprojectexample.GetterSetterActivitys.RegisterUsers;
+import com.example.databasefirebaseprojectexample.classes.RegisterUsers;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -36,12 +36,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
   FirebaseAuth auth;
   FirebaseAnalytics firebaseAnalytics;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-
 
         //  EditText
         etfirstname=findViewById(R.id.editText_firstname);
@@ -61,17 +59,14 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         auth=FirebaseAuth.getInstance();
         firebaseAnalytics= FirebaseAnalytics.getInstance(this);
 
-
         tvlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
             }
         });
 
         register.setOnClickListener(this);
-
     }
 
     @Override
@@ -144,7 +139,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if(task.isSuccessful()){
-
                     Bundle bundle= new Bundle();
                     bundle.putString("signup","Student signup");
                     firebaseAnalytics.logEvent("signup",bundle);
@@ -165,8 +159,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             }
     }
 
-
-
     public  void addInDb(){
         FirstName=etfirstname.getText().toString();
         LastName=etlastname.getText().toString();
@@ -174,7 +166,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         Cnic=etcnic.getText().toString();
         PhoneNo =etphoneNo.getText().toString();
         Email=etEmail.getText().toString();
-
 
         String id=auth.getUid();
         Approval="no";

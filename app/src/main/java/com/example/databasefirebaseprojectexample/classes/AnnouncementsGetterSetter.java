@@ -1,4 +1,4 @@
-package com.example.databasefirebaseprojectexample.GetterSetterActivitys;
+package com.example.databasefirebaseprojectexample.classes;
 
 public class AnnouncementsGetterSetter {
     private String userid;

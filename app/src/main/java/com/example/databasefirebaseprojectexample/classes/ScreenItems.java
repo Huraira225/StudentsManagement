@@ -1,4 +1,4 @@
-package com.example.databasefirebaseprojectexample.GetterSetterActivitys;
+package com.example.databasefirebaseprojectexample.classes;
 
 public class ScreenItems {
 
@@ -11,7 +11,6 @@ public class ScreenItems {
             Description = description;
             ScreenImg = screenImg;
         }
-
         public void setTitle(String title) {
             Title = title;
         }

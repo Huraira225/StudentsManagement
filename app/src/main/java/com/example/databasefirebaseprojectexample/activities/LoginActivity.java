@@ -1,4 +1,4 @@
-package com.example.databasefirebaseprojectexample.Activities;
+package com.example.databasefirebaseprojectexample.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,15 +44,12 @@ public class LoginActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
         etEmail = (EditText) findViewById(R.id.editText_email);
         etPassword = (EditText) findViewById(R.id.editText_password);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         btnLogin = (Button) findViewById(R.id.button_LogIn);
         btnSignup = (TextView) findViewById(R.id.textView_signup);
         btnReset = (TextView) findViewById(R.id.textView_forgetpassword);
-
-
 
         profileUserRef = FirebaseDatabase.getInstance().getReference().child("Students");
         databaseReference= FirebaseDatabase.getInstance("https://databaseregisterationuser-default-rtdb.firebaseio.com/").getReference("Students");
@@ -115,7 +112,6 @@ public class LoginActivity extends AppCompatActivity  {
                                     // If sign in fails, display a message to the user. If sign in succeeds
                                     // the auth state listener will be notified and logic to handle the
                                     // signed in user can be handled in the listener.
-
                                     if (!task.isSuccessful()) {
                                         progressBar.setVisibility(View.GONE);
                                         Toast.makeText(LoginActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -138,7 +134,6 @@ public class LoginActivity extends AppCompatActivity  {
 
                                             }
                                         });
-
                                         new Handler().postDelayed(new Runnable() {
                                             @Override
                                             public void run() {
@@ -164,13 +159,8 @@ public class LoginActivity extends AppCompatActivity  {
                                                     Toast.makeText(LoginActivity.this, "Please Approve Your Account From Admin", Toast.LENGTH_LONG).show();
 
                                                 }
-
                                             }
                                         },5000);
-
-
-
-
 
                                     }
                                 }

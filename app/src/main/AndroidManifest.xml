@@ -9,27 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.RegistrationCompleteActivity">
+        <activity android:name=".activities.RegistrationCompleteActivity">
 
 
         </activity>
-        <activity android:name=".Activities.OnBaordingScreenActivity"></activity>
-        <activity android:name=".Activities.AnnouncementsActivity" />
-        <activity android:name=".Activities.HomeActivity" />
-        <activity android:name=".Activities.ClassFellowsActivity" />
-        <activity android:name=".Dialogs.ProfileDialogActivity" />
-        <activity android:name=".Activities.ForgetPasswordActivity" />
-        <activity android:name=".Activities.Profile_Activity" />
-        <activity android:name=".Activities.LoginActivity" />
-        <activity android:name=".Activities.ChooseScreenActivity" />
-        <activity android:name=".Activities.SplashActivity">
+        <activity android:name=".activities.OnBoardingScreenActivity"
+            ></activity>
+        <activity android:name=".activities.AnnouncementsActivity" />
+        <activity android:name=".activities.HomeActivity" />
+        <activity android:name=".activities.ClassFellowsActivity" />
+        <activity android:name=".dialogs.ProfileDialogActivity" />
+        <activity android:name=".activities.ForgetPasswordActivity" />
+        <activity android:name=".activities.ProfileActivity" />
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.IntroActivity" />
+        <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.SignUpActivity" />
+        <activity android:name=".activities.SignUpActivity" />
     </application>
 
 </manifest>

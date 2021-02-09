@@ -4,15 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/rounded_edittext_corner"
-   >
-
-
+    android:background="@drawable/bg_rounded_corner_border"
+    tools:ignore="MissingDefaultResource">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:background="@drawable/rounded_edittext_corner"
+        android:background="@drawable/bg_rounded_corner_border"
         android:orientation="vertical"
         android:padding="40dp"
         tools:layout_editor_absoluteX="124dp"
@@ -22,111 +20,115 @@
             android:id="@+id/login_dp"
             android:layout_width="117dp"
             android:layout_height="93dp"
-            android:src="@drawable/profile_screen_ic"
+            android:src="@drawable/ic_profile_screen"
             tools:layout_editor_absoluteX="152dp"
             tools:layout_editor_absoluteY="104dp" />
 
-        <EditText
+        <TextView
             android:id="@+id/editText_firstname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_edittext_corner"
             android:ems="10"
             android:layout_marginTop="10dp"
             android:hint="FirstName"
-            android:drawableLeft="@drawable/ic_icon_material_account"
             android:drawablePadding="8dp"
             android:inputType="textPersonName"
             android:padding="5dip"
             tools:layout_editor_absoluteX="68dp"
             tools:layout_editor_absoluteY="109dp" />
 
-        <EditText
+        <TextView
             android:id="@+id/editText_lastname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:drawableLeft="@drawable/ic_icon_material_account"
+
             android:drawablePadding="8dp"
             android:ems="10"
             android:hint="LastName"
             android:padding="5dip"
-            android:background="@drawable/rounded_edittext_corner"
             android:inputType="textPersonName"
             tools:layout_editor_absoluteX="68dp"
             tools:layout_editor_absoluteY="174dp" />
 
-        <EditText
+        <TextView
             android:id="@+id/editText_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_icon_material_account"
             android:drawablePadding="8dp"
             android:ems="10"
             android:padding="5dip"
             android:layout_marginTop="10dp"
-            android:background="@drawable/rounded_edittext_corner"
             android:hint="UserName"
             android:inputType="textPersonName"
             tools:layout_editor_absoluteX="68dp"
             tools:layout_editor_absoluteY="239dp" />
 
-        <EditText
+        <TextView
             android:id="@+id/editText_cnic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:drawableLeft="@drawable/ic_icon_awesome_id_cnic"
             android:drawablePadding="8dp"
             android:ems="10"
             android:padding="5dip"
-            android:background="@drawable/rounded_edittext_corner"
             android:hint="Cnic *****-*******-*"
             android:inputType="textPersonName"
             tools:layout_editor_absoluteX="68dp"
             tools:layout_editor_absoluteY="302dp" />
 
-        <EditText
+        <TextView
             android:id="@+id/editText_phoneNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:layout_marginTop="10dp"
             android:hint="PhoneNo"
-            android:drawableLeft="@drawable/ic_icon_awesome_phone"
             android:drawablePadding="8dp"
             android:padding="5dip"
-            android:background="@drawable/rounded_edittext_corner"
             android:inputType="number"
             tools:layout_editor_absoluteX="68dp"
             tools:layout_editor_absoluteY="363dp" />
 
-        <EditText
+        <TextView
             android:id="@+id/editText_email"
             android:layout_width="match_parent"
             android:padding="5dip"
-            android:background="@drawable/rounded_edittext_corner"
             android:layout_height="wrap_content"
             android:ems="10"
             android:layout_marginTop="10dp"
             android:hint="Email"
-            android:drawableLeft="@drawable/ic_icon_zocial_email"
             android:drawablePadding="8dp"
             android:inputType="textPersonName"
             tools:layout_editor_absoluteX="68dp"
             tools:layout_editor_absoluteY="427dp" />
 
-        <Button
-            android:id="@+id/button_Update"
-            android:layout_width="150dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/login_rounded_button"
-            android:textColor="@color/black"
-            android:text="Update"
-            tools:layout_editor_absoluteX="91dp"
-            tools:layout_editor_absoluteY="605dp" />
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/button_Email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_login_rounded_button"
+                android:layout_weight="1"
+                android:text="Email" />
+            <Button
+                android:id="@+id/button_Phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_login_rounded_button"
+                android:layout_weight="1"
+                android:text="Call" />
+            <Button
+                android:id="@+id/button_Message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_login_rounded_button"
+                android:layout_weight="1"
+                android:text="Message" />
+        </LinearLayout>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

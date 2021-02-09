@@ -1,4 +1,4 @@
-package com.example.databasefirebaseprojectexample.Activities;
+package com.example.databasefirebaseprojectexample.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,7 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import static android.media.CamcorderProfile.get;
 
-public class Profile_Activity extends AppCompatActivity implements View.OnClickListener {
+public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView firstName, lastName, userName, cnic, phoneNo,email,back ;
     Button button;
@@ -35,6 +36,7 @@ public class Profile_Activity extends AppCompatActivity implements View.OnClickL
     String currrentUserId;
     FirebaseAnalytics firebaseAnalytics;
     String FirstName,LastName,UserName,Cnic,PhoneNo,Email, approve ="yes";
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class Profile_Activity extends AppCompatActivity implements View.OnClickL
         currrentUserId = auth.getCurrentUser().getUid();
         profileUserRef = FirebaseDatabase.getInstance().getReference().child("Students").child(currrentUserId);
 
+        progressBar = (ProgressBar) findViewById(R.id.progressBar_profile);
         userName = (TextView) findViewById(R.id.TextView_username);
         email = (TextView) findViewById(R.id.TextView_email);
         phoneNo = (TextView) findViewById(R.id.TextView_phoneNo);
@@ -61,6 +64,7 @@ public class Profile_Activity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onStart() {
         super.onStart();
+        progressBar.setVisibility(View.VISIBLE);
         profileUserRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -78,6 +82,7 @@ public class Profile_Activity extends AppCompatActivity implements View.OnClickL
                     cnic.setText(Cnic);
                     phoneNo.setText(PhoneNo);
                     email.setText(Email);
+                    progressBar.setVisibility(View.GONE);
                 }
             }
 
@@ -87,10 +92,6 @@ public class Profile_Activity extends AppCompatActivity implements View.OnClickL
             }
         });
     }
-
-
-
-
     @Override
     public void onClick(View view) {
         int id = view.getId();
@@ -99,8 +100,8 @@ public class Profile_Activity extends AppCompatActivity implements View.OnClickL
             finish();
 
         }else if (id == R.id.button_Edit_profile) {
-            final AlertDialog.Builder mBuilder = new AlertDialog.Builder(Profile_Activity.this);
-            View mView = getLayoutInflater().inflate(R.layout.activity_profile_pop_up_dailog, null);
+            final AlertDialog.Builder mBuilder = new AlertDialog.Builder(ProfileActivity.this);
+            View mView = getLayoutInflater().inflate(R.layout.layout_dialog_profile, null);
             mBuilder.setView(mView);
              final AlertDialog dialog = mBuilder.create();
             dialog.show();
@@ -125,8 +126,6 @@ public class Profile_Activity extends AppCompatActivity implements View.OnClickL
             buttonUpdate.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-
                     String FirstName = updateFirstname.getText().toString();
                     String LastName = updateLastname.getText().toString();
                     String UserName = updateUsername.getText().toString();
@@ -142,17 +141,11 @@ public class Profile_Activity extends AppCompatActivity implements View.OnClickL
                     profileUserRef.child("phoneno").setValue(PhoneNo);
                     profileUserRef.child("email").setValue(Email);
 
-
-                                            Toast.makeText(Profile_Activity.this, "User Updated", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(ProfileActivity.this, "User Updated", Toast.LENGTH_LONG).show();
                                             Bundle bundle= new Bundle();
                                             bundle.putString("profile","Student profile");
                                             firebaseAnalytics.logEvent("profile",bundle);
-
                                             dialog.dismiss();
-                                         //   return;
-                                            //Method for update data
-
-
                 }
             });
        }

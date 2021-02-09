@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_onboarding_screens"
-    tools:context=".Activities.ChooseScreenActivity">
+    tools:context=".activities.IntroActivity">
 
 
     <LinearLayout
@@ -43,7 +43,7 @@
             android:layout_width="185dp"
             android:layout_height="41dp"
             android:layout_marginTop="100dp"
-            android:background="@drawable/cornar_rounded_button"
+            android:background="@drawable/bg_cornar_rounded_button"
             android:text="LOG IN"
             android:textColor="#FFFFFF"
             android:textStyle="bold" />
@@ -53,7 +53,7 @@
             android:layout_width="185dp"
             android:layout_height="41dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/cornar_rounded_button"
+            android:background="@drawable/bg_cornar_rounded_button"
             android:text="Sign up"
             android:textColor="#FFFFFF"
             android:textStyle="bold" />

@@ -1,4 +1,4 @@
-package com.example.databasefirebaseprojectexample.Activities;
+package com.example.databasefirebaseprojectexample.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,16 +14,11 @@ import android.widget.Toast;
 import com.example.databasefirebaseprojectexample.R;
 
 public class SplashActivity extends AppCompatActivity {
-
-
     String Firstname,Lastname;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
-
-
-
 
         final SharedPreferences pref = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
 
@@ -42,7 +37,7 @@ public class SplashActivity extends AppCompatActivity {
                 if (netInfo != null) {
                     if (netInfo.isConnected()) {
                         if (check == false) {
-                            startActivity(new Intent(SplashActivity.this, OnBaordingScreenActivity.class));
+                            startActivity(new Intent(SplashActivity.this, OnBoardingScreenActivity.class));
                             finish();
                         } else if (check == true) {
                             if (checkLoginState.equals("UserLogin")) {
@@ -54,7 +49,7 @@ public class SplashActivity extends AppCompatActivity {
                                 finish();
                             }
                         } else if (checkLoginState.equals("UserLogout")) {
-                            startActivity(new Intent(SplashActivity.this, ChooseScreenActivity.class));
+                            startActivity(new Intent(SplashActivity.this, IntroActivity.class));
                             finish();
                         }
                     }else {
@@ -63,9 +58,6 @@ public class SplashActivity extends AppCompatActivity {
                 } else {
                         Toast.makeText(SplashActivity.this, "Please Connect to Internet", Toast.LENGTH_SHORT).show();
                 }
-
-
-
             }
 
         },3000);

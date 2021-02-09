@@ -1,4 +1,4 @@
-package com.example.databasefirebaseprojectexample.Dialogs;
+package com.example.databasefirebaseprojectexample.dialogs;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +11,6 @@ public class ProfileDialogActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile_pop_up_dailog);
-
+        setContentView(R.layout.layout_dialog_profile);
     }
 }
