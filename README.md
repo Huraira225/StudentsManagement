@@ -1,5 +1,5 @@
-# StudentsManagement
-Student Management System Developed in Native Android Using Java and Firebase.
+# Student Management Portal
+Student Management Portal Developed in Native Android Using Java and Firebase.
 
 Functions 
 
