@@ -1,8 +1,6 @@
 # StudentsManagement
 Student Management System Developed in Native Android Using Java and Firebase.
 
-Here is the link for Admin App Repository https://github.com/Huraira225/StudentsManagementAdmin.git
-
 Functions 
 
 1.Signup
@@ -12,5 +10,7 @@ Functions
 5.Profile View and Update
 6.Navigation Drawer
 7.Show All Students
+8.Admin Annocements
 
 
+Here is the link for Admin App Repository https://github.com/Huraira225/StudentsManagementAdmin.git
