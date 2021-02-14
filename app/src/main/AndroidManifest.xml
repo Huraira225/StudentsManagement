@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.databasefirebaseprojectexample">
+    package="com.example.studentmanagement">
 
     <application
         android:allowBackup="true"
@@ -8,29 +8,28 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:resizeableActivity="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.RegistrationCompleteActivity">
-
-
+        <activity android:name="com.example.studentmanagement.activities.RegistrationCompleteActivity" android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".activities.OnBoardingScreenActivity"
+        <activity android:name="com.example.studentmanagement.activities.OnBoardingScreenActivity" android:screenOrientation="portrait"
             ></activity>
-        <activity android:name=".activities.AnnouncementsActivity" />
-        <activity android:name=".activities.HomeActivity" />
-        <activity android:name=".activities.ClassFellowsActivity" />
-        <activity android:name=".dialogs.ProfileDialogActivity" />
-        <activity android:name=".activities.ForgetPasswordActivity" />
-        <activity android:name=".activities.ProfileActivity" />
-        <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.IntroActivity" />
-        <activity android:name=".activities.SplashActivity">
+        <activity android:name="com.example.studentmanagement.activities.AnnouncementsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.example.studentmanagement.activities.HomeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.example.studentmanagement.activities.ClassFellowsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.example.studentmanagement.dialogs.ProfileDialogActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.example.studentmanagement.activities.ForgetPasswordActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.example.studentmanagement.activities.ProfileActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.example.studentmanagement.activities.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.example.studentmanagement.activities.IntroActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.example.studentmanagement.activities.SplashActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.SignUpActivity" />
+        <activity android:name="com.example.studentmanagement.activities.SignUpActivity" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

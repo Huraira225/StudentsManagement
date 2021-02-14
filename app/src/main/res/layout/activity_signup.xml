@@ -143,7 +143,6 @@
             android:layout_height="44dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/bg_login_rounded_button"
-            android:foreground="?android:attr/selectableItemBackgroundBorderless"
             android:text="sign up"
             android:textColor="@color/black"
             tools:layout_editor_absoluteX="91dp"

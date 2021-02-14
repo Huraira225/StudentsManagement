@@ -45,20 +45,12 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:455127610320:android:190f0025e84276bc1d7fd5",
+        "mobilesdk_app_id": "1:455127610320:android:a89a862d060a9a941d7fd5",
         "android_client_info": {
-          "package_name": "com.example.databasefirebaseprojectexample"
+          "package_name": "com.example.studentmanagement"
         }
       },
       "oauth_client": [
-        {
-          "client_id": "455127610320-f5t9o8126ah9n33fqmiteup0fbcuup4f.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.databasefirebaseprojectexample",
-            "certificate_hash": "42194c41287e42b3d28c85b224127ef821aecb30"
-          }
-        },
         {
           "client_id": "455127610320-gn1d6bemia1l63pubdu2pii8jqajepu5.apps.googleusercontent.com",
           "client_type": 3
